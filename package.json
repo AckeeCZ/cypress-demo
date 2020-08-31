@@ -1,0 +1,13 @@
+{
+    "name": "cypress-demo",
+    "version": "1.0.0",
+    "repository": "git@gitlab.ack.ee:Ackee/cypress-demo.git",
+    "author": "Jiří Zdvomka <jiri.zdvomka@ackee.cz>",
+    "license": "MIT",
+    "scripts": {
+        "test": "yarn cypress open"
+    },
+    "devDependencies": {
+        "cypress": "^5.0.0"
+    }
+}
