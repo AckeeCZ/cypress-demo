@@ -17,8 +17,9 @@ Steps:
  1. Clone a GIT project and open up a terminal in its directory.
  2. Install Cypress with `yarn add -D cypress`
  3. Run it with `yarn cypress open`
+ 4. Add `baseUrl` key (localhost or any public URL) into `cypress.json` configuration file.
 
-All Cypres related files are located in `cypress` directory. Configuration is in `cypress.json` file.
+All Cypres related files are located in `cypress` directory.
 
 ## Interacting with elements on a page
 

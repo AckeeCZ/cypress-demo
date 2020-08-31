@@ -4,4 +4,9 @@ logs
 **/*.backup.*
 **/*.back.*
 
+# Node
 node_modules
+
+# Cypress
+cypress/screenshots
+cypress/videos
