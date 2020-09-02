@@ -23,3 +23,21 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+
+Cypress.Commands.add(
+    'fillRegisterForm',
+    ({
+        name = 'John Doe',
+        email = 'doe14@gmail.com',
+        password = 'asdf4567',
+    } = {}) => {
+        cy.get('button[data-testid="menu-button-user"]').click()
+        cy.get('li[data-testid="user-menu-login"]').click()
+
+        cy.get('input[name="name"]').type(name)
+        cy.get('input[name="email"]').type(email)
+        cy.get('input[name="password"]').type(password)
+
+        cy.get('button[type="submit"]').click()
+    }
+)
