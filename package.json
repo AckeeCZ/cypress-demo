@@ -5,12 +5,9 @@
     "author": "Jiří Zdvomka <jiri.zdvomka@ackee.cz>",
     "license": "MIT",
     "scripts": {
-        "build": "yarn grpc",
-        "test": "yarn build && yarn cypress open",
-        "grpc": "./scripts/grpc.sh"
+        "build": "yarn grpc"
     },
     "devDependencies": {
-        "cypress": "^5.0.0",
-        "cypress-protobuf": "^1.0.5"
+        "cypress": "^5.0.0"
     }
 }
