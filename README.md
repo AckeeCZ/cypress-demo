@@ -47,6 +47,25 @@ Some important commands / terms:
  - [`cy.get().within()`](https://docs.cypress.io/api/commands/within.html) - finds elements within found element
  - `cy.wait(5000)` - waits for the specified interval (miliseconds)
 
-## Stubing API calls
+## Stubbing API calls
+
+Links:
+ - [Documentation page](https://docs.cypress.io/guides/guides/network-requests.html)
+ - Examples in [cypress/integration/register.spec.js](cypress/integration/register.spec.js)
+
+Works **only for XHR requests** and doesn't work for new Fetch API so far. There is [an experimental workaround](https://docs.cypress.io/guides/guides/network-requests.html#Testing-Strategies).
+
+Network request are visible in test runner debugger. Custom response (a fixture) can be saved in JSON format in `cypress/fixtures` folder.
+
+Important commands:
+ - [`cy.server()`](https://docs.cypress.io/api/commands/server.html#Syntax)  - starts a server to begin request intercepting. Should be executed before stubbing.
+ - [`cy.route()`](https://docs.cypress.io/api/commands/route.html) - Command to stub a request.
+   - URL
+   - HTTP method
+   - HTTP response - fixtures saved in `cypress/fixtures` folder can be used by defining string `fixture:my_response.json`
+   - HTTP response status (default is OK 200)
+- `cy.route(...).as('responseAlias')` - alias for a stubbed request
+- `cy.wait('@responseAlias')` - waits for a request with the alias to be completed.
+  
 
 ## Custom commands
