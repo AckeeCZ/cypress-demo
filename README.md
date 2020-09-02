@@ -77,8 +77,16 @@ Links:
  - Definition in [cypress/support/commands.js](cypress/support/commands.js)
  - Example usage in [cypress/integration/register.spec.js](cypress/integration/register.spec.js) - `cy.fillRegisterForm()`
 
-Custom commands accessible on `cy` variable. They are useful for repetitive stuff like signing in. **They shouldn't be overloaded to prepare state though.**
+Custom commands accessible on `cy` variable. They are useful for repetitive stuff like signing in.
 
 Important commands:
  - `Cypress.Commands.add('myCustomCommand', () => {...})` - adds a command. Should be placed inside `cypress/support/commands.js` file by the convention.
  - `cy.myCustomCommand()` - executes the custom command
+
+
+## Preparing state
+
+Links:
+ - [Documentation](https://docs.cypress.io/api/commands/request.html#Syntax)
+
+**Custom commands shouldn't be overloaded to prepare state** (e.g. sign in a user). Programmatic preparation of state with `cy.request()` should be used instead, which makes any HTTP request on the background without affecting UI. The API is very similar to `cy.route()`.
