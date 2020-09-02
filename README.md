@@ -23,7 +23,9 @@ All Cypres related files are located in `cypress` directory.
 
 ## Basics of testing
 
-Test file: [contact_form.spec.js](cypress/integration/contact_form.spec.js)
+Links:
+- [Documentation](https://docs.cypress.io/guides/getting-started/writing-your-first-test.html)
+- Example in [contact_form.spec.js](cypress/integration/contact_form.spec.js)
 
 Each test case has its own file in `cypress/integration`. The naming convention is `your_test_name.spec.js`. Tests can be grouped with `describe` function and each single tests is within `it` function:
 
@@ -69,3 +71,14 @@ Important commands:
   
 
 ## Custom commands
+
+Links:
+ - [Documentation](https://on.cypress.io/custom-commands)
+ - Definition in [cypress/support/commands.js](cypress/support/commands.js)
+ - Example usage in [cypress/integration/register.spec.js](cypress/integration/register.spec.js) - `cy.fillRegisterForm()`
+
+Custom commands accessible on `cy` variable. They are useful for repetitive stuff like signing in. **They shouldn't be overloaded to prepare state though.**
+
+Important commands:
+ - `Cypress.Commands.add('myCustomCommand', () => {...})` - adds a command. Should be placed inside `cypress/support/commands.js` file by the convention.
+ - `cy.myCustomCommand()` - executes the custom command
